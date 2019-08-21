@@ -36,7 +36,7 @@ Extracting schema from database
 
 My goal is to have the Azure Toolkit included in our DevOps Pipeline in order to generate the needed packages for the web root deployment. Obviously, the .dacpac files it generates are not needed and it's also none of the build agent's business to get schemas from the databases.
 
-Having a quick look into `Sitecore.Cloud.Cmdlets.dll` revealed an invocation of the following method: `Sitecore.Cloud.Packaging.WebDeployPackages.WebDeployPackageBuilder.Build(Sitecore.Cloud.Packaging.SitecoreSources.SitecoreInstallationFolderTree scInstFoldTree, DotNet.Basics.IO.DirPath outputDir,System.String targetFileName, System.Boolean force, System.String version, System.Boolean integratedSecurity)`. The method has the following check in place which triggers `DatabasePackager`.
+Having a quick look into `Sitecore.Cloud.Cmdlets.dll` revealed an invocation of the following method: `Sitecore.Cloud.Packaging.WebDeployPackages.WebDeployPackageBuilder.Build( Sitecore.Cloud.Packaging.SitecoreSources.SitecoreInstallationFolderTree scInstFoldTree, DotNet.Basics.IO.DirPath outputDir,System.String targetFileName, System.Boolean force, System.String version, System.Boolean integratedSecurity)`. The method has the following check in place which triggers `DatabasePackager`.
 
 ```csharp
 string uri = ((IEnumerable<string>) scInstFoldTree.Website).FirstOrDefault<string>((Func<string, bool>) (i => i.ToFile(Array.Empty<string>()).Name == "ConnectionStrings.config"));
