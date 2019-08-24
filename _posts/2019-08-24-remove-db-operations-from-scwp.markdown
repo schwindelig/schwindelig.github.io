@@ -27,7 +27,7 @@ It turns out that packages still contain `.sql` files, such as `CreateUser.Core.
 </sitemanifest>
 ```
 
-I assume that those invocations are somehow derived from the `MsDeployXmls`. I didn't really like the idea of manipulating those parameter files, as I'm sure that this will only cause problems down the road when a Sitecore upgraded is needed, so I searched for alternative solution.
+I assume that those invocations are somehow derived from the `MsDeployXmls`. I didn't really like the idea of manipulating those parameter files, as I'm sure that this will only cause problems down the road when a Sitecore upgraded is needed, so I searched for an alternative solution.
 
 Back in `Sitecore.Cloud.Cmdlets.dll`, I found another interesting `Cmdlet`, called `RemoveSCDatabaseOperations` invoking `Sitecore.Cloud.Packaging.WebDeployPackages.WebDeployPackageBuilder.RemoveDBOperations( WebDeployPackageTree, FilePath)`. Taking a closer look at the method, it seems to be doing exactly what I was looking for:
 
