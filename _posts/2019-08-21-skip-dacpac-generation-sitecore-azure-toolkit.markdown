@@ -13,7 +13,7 @@ The Sitecore Azure Toolkit provides a handy method to create `.wdp` packages for
 Start-SitecoreAzurePackaging `
   -sitecorePath "C:\output\habitat" `
   -destinationFolderPath "C:\output" `
-  -cargoPayloadFolderPath "C:\Sitecore Azure Toolkit\resources\9.2.0\CargoPayloads\Sitecore.Cloud.Common.sccpl" `
+  -cargoPayloadFolderPath "C:\Sitecore Azure Toolkit\resources\9.2.0\CargoPayloads" `
   -commonConfigPath "C:\Sitecore Azure Toolkit\resources\9.2.0\Configs\Common.Packaging.config.json" `
   -skuConfigPath "C:\Sitecore Azure Toolkit\resources\9.2.0\Configs\XPSingle.Packaging.config.json" `
   -parameterXmlPath "C:\Sitecore Azure Toolkit\resources\9.2.0\MsDeployXmls\XPSingle.Parameters.xml" `
