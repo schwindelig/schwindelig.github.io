@@ -104,3 +104,16 @@ ForEach-Object {
   Remove-Item $_.FullName -Force -ErrorAction Ignore
 }
 ```
+
+After the method has done its thing, the `.scwdp` packages are clear from `.sql` files and the `archive.xml` looks way more reasonable:
+
+```xml
+<sitemanifest MSDeploy.ObjectResolver.createApp="Microsoft.Web.Deployment.CreateApplicationObjectResolver" MSDeploy.ObjectResolver.dirPath="Microsoft.Web.Deployment.DirPathObjectResolver" MSDeploy.ObjectResolver.filePath="Microsoft.Web.Deployment.FilePathObjectResolver">
+  <iisApp path="WebSite" MSDeploy.path="2" MSDeploy.MSDeployLinkName="Child1" MSDeploy.MSDeployKeyAttributeName="path" MSDeploy.MSDeployProviderOptions="XXX">
+    <createApp path="WebSite" MSDeploy.path="2" isDest="AA==" MSDeploy.isDest.Type="Microsoft.Web.Deployment.DeploymentObjectBooleanAttributeValue" managedRuntimeVersion="" MSDeploy.managedRuntimeVersion="2" enable32BitAppOnWin64="" MSDeploy.enable32BitAppOnWin64="2" managedPipelineMode="" MSDeploy.managedPipelineMode="2" applicationPool="" MSDeploy.applicationPool="1" appExists="True" MSDeploy.appExists="1" MSDeploy.MSDeployLinkName="createApp" MSDeploy.MSDeployKeyAttributeName="path" />
+    <contentPath path="WebSite" MSDeploy.path="2" MSDeploy.MSDeployLinkName="contentPath" MSDeploy.MSDeployKeyAttributeName="path" MSDeploy.MSDeployProviderOptions="XXX">
+      <MSDeploy.dirPath path="WebSite" MSDeploy.MSDeployLinkName="contentPath" />
+    </contentPath>
+  </iisApp>
+</sitemanifest>
+```
