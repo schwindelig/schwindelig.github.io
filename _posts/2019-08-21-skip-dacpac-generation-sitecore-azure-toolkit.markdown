@@ -7,7 +7,7 @@ categories: sitecore azure
 
 TLDR: Remove `ConnectionStrings.config` from the web directory you are packaging. Be sure that the `dataFolder` is available during build.
 
-The Sitecore Azure Toolkit provides a handy method to create `.wdp` packages for deployments. A call to `Start-SitecoreAzurePackaging` might look something like this:
+The Sitecore Azure Toolkit provides a handy method to create Sitecore Web Deploy Packages (`.scwdp`) for deployments. A call to `Start-SitecoreAzurePackaging` might look something like this:
 
 ```powershell
 Start-SitecoreAzurePackaging `
